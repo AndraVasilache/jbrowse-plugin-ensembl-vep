@@ -27,10 +27,13 @@
   "peerDependencies": {
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
-    "mobx-state-tree": "^3.17.2",
-    "react": "^16.13.1"
+    "mobx-state-tree": "^3.17.2"
   },
   "devDependencies": {
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
+    "mobx-state-tree": "^3.17.2",
+    "react": "^16.13.1",
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
