@@ -4,7 +4,7 @@
   },
   "plugins": [
     {
-        "name": "GDC",
+        "name": "ensembl",
         "url": "http://localhost:9000/plugin.js"
     }
   ],
@@ -43,107 +43,124 @@
   ],
   "tracks": [
     {
-      "type": "GDCTrack",
-      "trackId": "gdc_plugin_track",
-      "name": "GDC",
-      "assemblyNames": ["hg38"],
-      "category": ["Annotation"],
-      "adapter": {
-        "type": "GDCAdapter"
-      },
-      "renderer": {
-        "color": "function(feature) { const filteredConsequences = feature.get('consequence').hits.edges.filter(cons => cons.node.transcript.is_canonical); const impact = filteredConsequences[0].node.transcript.annotation.vep_impact; switch(impact) {case 'LOW': return 'blue'; break;case 'MODIFIER': return 'goldenrod'; break;case 'MODERATE': return 'orange'; break;case 'HIGH': return 'red'; break;case '': return 'lightgrey'; break;}}",
-        "label": "function(feature) { return feature.get('genomicDnaChange') }",
-        "type": "SvgFeatureRenderer"
-      }
-    },
-    {
-      "type": "BasicTrack",
-      "trackId": "gencode_nclist_hg38",
-      "name": "Gencode v32",
-      "assemblyNames": ["hg38"],
-      "category": ["Annotation"],
-      "adapter": {
-        "type": "NCListAdapter",
-        "rootUrlTemplate": "https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/gencode/{refseq}/trackData.jsonz",
-        "refNames": [
-          "chr1",
-          "chr2",
-          "chr3",
-          "chr4",
-          "chr5",
-          "chr6",
-          "chr7",
-          "chr8",
-          "chr9",
-          "chr10",
-          "chr11",
-          "chr12",
-          "chr13",
-          "chr14",
-          "chr15",
-          "chr16",
-          "chr17",
-          "chr18",
-          "chr19",
-          "chr20",
-          "chr21",
-          "chr22",
-          "chr23",
-          "chrX",
-          "chrY",
-          "chrMT"
-        ]
-      },
-      "renderer": {
-        "type": "SvgFeatureRenderer",
-        "labels": {
-          "description": "function(feature) { return feature.get('gene_name') }"
+      "type": "VariantTrack",
+        "trackId": "1000_genomes_variants",
+        "name": "1000 genomes variants",
+        "assemblyNames": [
+          "hg38"
+        ],
+        "category": [
+          "1000 genomes"
+        ],
+        "adapter": {
+          "type": "VcfTabixAdapter",
+          "vcfGzLocation": {
+            "uri": "https://s3.amazonaws.com/1000genomes/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz"
+          },
+          "index": {
+            "location": {
+              "uri": "https://s3.amazonaws.com/1000genomes/release/20130502/ALL.wgs.phase3_shapeit2_mvncall_integrated_v5b.20130502.sites.vcf.gz.tbi"
+            }
+          }
+        },
+        "renderers": {
+          "PileupRenderer": {
+            "type": "PileupRenderer"
+          },
+          "SvgFeatureRenderer": {
+            "type": "SvgFeatureRenderer"
+          }
         }
       }
-    }
   ],
   "defaultSession": {
     "name": "New Session"
   },
   "savedSessions": [
     {
-      "name": "Human Example (hg38)",
-      "width": 1850,
+      "name": "New Session 2020-08-04T15:14:50.466Z",
+      "margin": 0,
       "drawerWidth": 384,
       "views": [
         {
-          "id": "MiDMyyWpp",
+          "id": "swolPBmlU",
+          "displayName": "hg38",
           "type": "LinearGenomeView",
-          "width": 800,
-          "displayName": "GDC demo",
-          "trackSelectorType": "hierarchical",
-          "offsetPx": 0,
-          "bpPerPx": 100,
+          "offsetPx": 9532210440,
+          "bpPerPx": 0.020000000000000004,
           "displayedRegions": [
             {
-              "refName": "3",
+              "refName": "1",
               "start": 0,
-              "end": 186700647,
+              "end": 248956422,
+              "reversed": false,
               "assemblyName": "hg38"
             }
           ],
           "tracks": [
             {
-              "type": "BasicTrack",
-              "configuration": "gencode_nclist_hg38",
-              "height": 100
-            },
-            {
-              "type": "GDCTrack",
-              "configuration": "gdc_plugin_track",
-              "height": 100
+              "id": "C4IqPkuPV",
+              "type": "VariantTrack",
+              "height": 100,
+              "configuration": "1000_genomes_variants"
             }
           ],
-          "controlsWidth": 120,
-          "minimumBlockWidth": 20
+          "hideHeader": false,
+          "hideHeaderOverview": false,
+          "trackSelectorType": "hierarchical",
+          "showTrackLabels": true,
+          "showCenterLine": false
         }
-      ]
-    }
+      ],
+      "drawerWidgets": {
+        "hierarchicalTrackSelector": {
+          "id": "hierarchicalTrackSelector",
+          "type": "HierarchicalTrackSelectorDrawerWidget",
+          "collapsed": {},
+          "filterText": "",
+          "view": "swolPBmlU"
+        },
+        "variantFeature": {
+          "id": "variantFeature",
+          "type": "VariantFeatureDrawerWidget",
+          "featureData": {
+            "uniqueId": "a8bc4-vcf-28466245439",
+            "refName": "1",
+            "start": 190644220,
+            "end": 190644221,
+            "description": "SNV A -> T",
+            "type": "SNV",
+            "name": "rs187210684",
+            "CHROM": "1",
+            "POS": 190644221,
+            "ID": ["rs187210684"],
+            "REF": "A",
+            "ALT": ["T"],
+            "QUAL": 100,
+            "FILTER": "PASS",
+            "INFO": {
+              "AC": [8],
+              "AF": [0.00159744],
+              "AN": [5008],
+              "NS": [2504],
+              "DP": [19360],
+              "EAS_AF": [0],
+              "AMR_AF": [0.0043],
+              "AFR_AF": [0],
+              "EUR_AF": [0.005],
+              "SAS_AF": [0],
+              "AA": ["A|||"],
+              "VT": ["SNP"]
+            },
+            "samples": {}
+          }
+        }
+      },
+      "activeDrawerWidgets": {
+        "hierarchicalTrackSelector": "hierarchicalTrackSelector",
+        "variantFeature": "variantFeature"
+      },
+      "connectionInstances": {}
+    }    
   ]
 }

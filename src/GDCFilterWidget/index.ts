@@ -1,11 +1,11 @@
 import PluginManager from '@gmod/jbrowse-core/PluginManager'
 import stateModel from './model'
-import GDCFilterComponentF from './components/GDCFilterComponent'
+import EnsemblVEPComponent from './components/EnsemblVEPComponent'
 
 export default (jbrowse: PluginManager) => {
   const React = jbrowse.lib.react
 
-  const ReactComponent = jbrowse.load(GDCFilterComponentF)
+  const ReactComponent = jbrowse.load(EnsemblVEPComponent)
   const { ConfigurationSchema } = jbrowse.lib[
     '@gmod/jbrowse-core/configuration'
   ]
@@ -13,11 +13,9 @@ export default (jbrowse: PluginManager) => {
   const { observer } = jbrowse.lib['mobx-react']
 
   return {
-    configSchema: ConfigurationSchema('GDCFilterWidget', {}),
+    configSchema: ConfigurationSchema('EnsemblVEPWidget', {}),
     ReactComponent,
     stateModel: jbrowse.load(stateModel),
-    HeadingComponent: observer(() => {
-      return <>GDC Filters</>
-    }),
+    heading: "Ensembl VEP"
   }
 }

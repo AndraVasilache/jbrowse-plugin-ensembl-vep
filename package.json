@@ -18,7 +18,7 @@
   "author": "Andrew Duncan",
   "license": "MIT",
   "dependencies": {
-    "@gmod/jbrowse-core": "^0.0.1-beta.17",
+    "@gmod/jbrowse-core": "file:///home/mira/Desktop/gmod-jbrowse-core-v0.0.1-beta.18.tgz",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "rxjs": "^6.6.0",

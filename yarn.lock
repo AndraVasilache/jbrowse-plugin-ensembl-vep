@@ -1157,10 +1157,9 @@
     util.promisify "^1.0.0"
     whatwg-fetch "^3.0.0"
 
-"@gmod/jbrowse-core@^0.0.1-beta.17":
-  version "0.0.1-beta.17"
-  resolved "https://registry.yarnpkg.com/@gmod/jbrowse-core/-/jbrowse-core-0.0.1-beta.17.tgz#072f5dc043f8ee8c3a8086ba29d42ba263a1b6ad"
-  integrity sha512-z/tk0tCn6o5xM5RX3HJruEYQTmfhncgkVUgEysPjhEQvCnEU/mb59h53LEZRgTXl4gg6i7Mcha/IkgprzAMxdg==
+"@gmod/jbrowse-core@file:../gmod-jbrowse-core-v0.0.1-beta.18.tgz":
+  version "0.0.1-beta.18"
+  resolved "file:../gmod-jbrowse-core-v0.0.1-beta.18.tgz#7f01f2ecce07fff2a22da64610f7373b5c46b70b"
   dependencies:
     "@librpc/web" rbuels/librpc-web#737bb9706762a52a87169a12c9b59fb241febab0
     "@material-ui/icons" "^4.0.0"
