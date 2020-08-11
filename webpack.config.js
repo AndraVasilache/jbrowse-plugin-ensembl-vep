@@ -7,5 +7,5 @@ const {
 const package = require('./package.json')
 
 const config = baseJBrowsePluginWebpackConfig(webpack, __dirname, package)
-config.output.library = 'JBrowsePluginGDC'
+config.output.library = 'JBrowsePluginensembl'
 module.exports = config
