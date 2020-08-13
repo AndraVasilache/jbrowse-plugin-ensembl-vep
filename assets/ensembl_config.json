@@ -4,7 +4,7 @@
   },
   "plugins": [
     {
-        "name": "ensembl",
+        "name": "Ensembl",
         "url": "http://localhost:9000/plugin.js"
     }
   ],
@@ -113,48 +113,6 @@
         }
       ],
       "drawerWidgets": {
-        "hierarchicalTrackSelector": {
-          "id": "hierarchicalTrackSelector",
-          "type": "HierarchicalTrackSelectorDrawerWidget",
-          "collapsed": {},
-          "filterText": "",
-          "view": "swolPBmlU"
-        },
-        "variantFeature": {
-          "id": "variantFeature",
-          "type": "VariantFeatureDrawerWidget",
-          "featureData": {
-            "uniqueId": "a8bc4-vcf-28466245439",
-            "refName": "1",
-            "start": 190644220,
-            "end": 190644221,
-            "description": "SNV A -> T",
-            "type": "SNV",
-            "name": "rs187210684",
-            "CHROM": "1",
-            "POS": 190644221,
-            "ID": ["rs187210684"],
-            "REF": "A",
-            "ALT": ["T"],
-            "QUAL": 100,
-            "FILTER": "PASS",
-            "INFO": {
-              "AC": [8],
-              "AF": [0.00159744],
-              "AN": [5008],
-              "NS": [2504],
-              "DP": [19360],
-              "EAS_AF": [0],
-              "AMR_AF": [0.0043],
-              "AFR_AF": [0],
-              "EUR_AF": [0.005],
-              "SAS_AF": [0],
-              "AA": ["A|||"],
-              "VT": ["SNP"]
-            },
-            "samples": {}
-          }
-        }
       },
       "activeDrawerWidgets": {
         "hierarchicalTrackSelector": "hierarchicalTrackSelector",

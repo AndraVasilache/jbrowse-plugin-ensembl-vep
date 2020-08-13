@@ -54,6 +54,7 @@ export default jbrowse => {
     },
   }))
 
+  //TODO: React Testing Library
   const BaseTranscripts = props => {
     const { feature } = props
     delete feature.intergenic_consequence
@@ -64,6 +65,7 @@ export default jbrowse => {
       biotype: 'biotype',
       impact: 'impact',
     }
+    console.log(Attributes)
     return (
       <Attributes {...props} attributes={feature} descriptions={descriptions} />
     )

@@ -15,7 +15,7 @@
   "files": [
     "dist"
   ],
-  "author": "Andrew Duncan",
+  "author": "Andra Vasilache",
   "license": "MIT",
   "dependencies": {
     "@gmod/jbrowse-core": "^0.0.1-beta.19",

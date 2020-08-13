@@ -4,9 +4,9 @@ export default jbrowse => {
   const { types } = jbrowse.jbrequire('mobx-state-tree')
 
   return types
-  .model('EnsemblVEPDrawerWidget', {
+  .model('EnsemblVEPWidget', {
     id: ElementId,
-    type: types.literal('EnsemblVEPDrawerWidget'),
+    type: types.literal('EnsemblVEPWidget'),
     featureData: types.frozen({}),
   })
   .actions(self => ({

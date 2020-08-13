@@ -1,7 +1,7 @@
 import type PluginManager from '@gmod/jbrowse-core/PluginManager'
 import Plugin from '@gmod/jbrowse-core/Plugin'
 
-import GDCFilterWidget from './GDCFilterWidget'
+import EnsemblVEPWidget from './EnsemblVEPWidget'
 export default class extends Plugin {
   name = 'GDCPlugin'
 
@@ -19,10 +19,10 @@ export default class extends Plugin {
         HeadingComponent,
         ReactComponent,
         stateModel,
-      } = pluginManager.load(GDCFilterWidget)
+      } = pluginManager.load(EnsemblVEPWidget)
 
       return new WidgetType({
-        name: 'GDCFilterWidget',
+        name: 'EnsemblVEPWidget',
         HeadingComponent,
         configSchema,
         stateModel,
