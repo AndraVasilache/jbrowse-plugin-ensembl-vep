@@ -60,8 +60,8 @@ export default class extends Plugin {
                       const session = getSession(self)
                       if (isSessionModelWithWidgets(session)) {
                         const featureWidget = session.addDrawerWidget(
-                          'EnsemblVEPDrawerWidget',
-                          'ensemblVEPDrawerWidget',
+                          'EnsemblVEPWidget',
+                          'ensemblVEPWidget',
                           { featureData: self.contextMenuFeature?.toJSON() },
                         )
                         session.showDrawerWidget(featureWidget)
