@@ -50,19 +50,21 @@ export default class extends Plugin {
               alreadyAdded.push(track.id)
               track.addAdditionalContextMenuItemCallback(
                 (feature, track, pluginManager) => {
+                  if (!feature) {
+                    return []
+                  }
                   const menuItem = {
                     /* menu item you already have, it has "label", "icon", "onClick" */
                     label: 'Ensembl VEP',
                     icon: StorageIcon,
                     onClick: () => {
-                      console.log('hello')
                       if (isSessionModelWithWidgets(session)) {
-                        const featureWidget = session.addDrawerWidget(
+                        const featureWidget = session.addWidget(
                           'EnsemblVEPWidget',
                           'ensemblVEPWidget',
                           { featureData: feature.toJSON() },
                         )
-                        session.showDrawerWidget(featureWidget)
+                        session.showWidget(featureWidget)
                       }
                   }
                 }

@@ -61,11 +61,10 @@ export default jbrowse => {
     delete feature.transcript_id
   
     const descriptions = {
-      consequence_terms: 'consequence_terms',
-      biotype: 'biotype',
-      impact: 'impact',
+      consequence_terms: 'Annotation (a.k.a. effect or consequence): Annotated using Sequence Ontology terms.',
+      biotype: 'Transcript biotype',
+      impact: 'Putative impact possible values: MODIFIER, LOW, MODERATE, HIGH',
     }
-    console.log(Attributes)
     return (
       <Attributes {...props} attributes={feature} descriptions={descriptions} />
     )
