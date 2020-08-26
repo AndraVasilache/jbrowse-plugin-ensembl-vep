@@ -22,7 +22,7 @@ export default jbrowse => {
     },
     fieldName: {
       display: 'inline-block',
-      minWidth: '90px',
+      minWidth: '140px',
       fontSize: '0.9em',
       borderBottom: '1px solid #0003',
       backgroundColor: '#ddd',
@@ -79,15 +79,45 @@ export default jbrowse => {
     const { samples, ...rest } = feat
     const { ALT, CHROM, start, end } = feat
     const query = `${CHROM}:${start}:${end}/${ALT[0]}`
-    const species = 'human'
+    const {speciesName, allAssemblyNames} = model
+
+    useEffect(() => {
+      const controller = new AbortController()
+      const { signal } = controller
+      async function speciesNameLookup() {
+        if (speciesName) return
+        try {
+          const response = await fetch(
+            `https://rest.ensembl.org/info/species?content-type=application/json`,
+            { signal },
+          )
+          const content = await response.json()
+          console.log(content)
+
+          array.forEach(elem => {
+            //if (elem)
+          })
+          
+          setSpecies(content)
+        } catch (error) {
+          if (!signal.aborted) console.error(error)
+        }
+      }
+  
+      speciesNameLookup()
+      return () => {
+        controller.abort()
+      }
+    }, [allAssemblyNames, setSpeciesName, speciesName])
   
     useEffect(() => {
       const controller = new AbortController()
       const { signal } = controller
       async function ensembl() {
+        if (!speciesName) return
         try {
           const response = await fetch(
-            `https://rest.ensembl.org/vep/${species}/region/${query}?content-type=application/json`,
+            `https://rest.ensembl.org/vep/${speciesName}/region/${query}?content-type=application/json`,
             { signal },
           )
           const content = await response.json()
@@ -101,7 +131,7 @@ export default jbrowse => {
       return () => {
         controller.abort()
       }
-    }, [query])
+    }, [query, speciesName])
   
     if (data !== undefined) {
       let array = data[0].transcript_consequences
