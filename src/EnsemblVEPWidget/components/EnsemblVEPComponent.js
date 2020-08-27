@@ -79,7 +79,7 @@ export default jbrowse => {
     const { samples, ...rest } = feat
     const { ALT, CHROM, start, end } = feat
     const query = `${CHROM}:${start}:${end}/${ALT[0]}`
-    const {speciesName, allAssemblyNames} = model
+    const {setSpeciesName, speciesName, allAssemblyNames} = model
 
     useEffect(() => {
       const controller = new AbortController()
@@ -92,10 +92,17 @@ export default jbrowse => {
             { signal },
           )
           const content = await response.json()
-          console.log(content)
-
-          array.forEach(elem => {
-            //if (elem)
+          // console.log(content)
+          console.log(setSpeciesName)
+          console.log(speciesName)
+          // console.log(allAssemblyNames)
+          
+          console.log(content.species)
+          content.species.forEach(speciemen => {
+            if(allAssemblyNames.includes (speciemen.assembly)) {
+              console.log(speciemen.common_name)
+              setSpecies(speciemen.common_name)
+            }
           })
           
           setSpecies(content)

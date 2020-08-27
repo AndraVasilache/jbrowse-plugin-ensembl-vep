@@ -26,6 +26,7 @@ export default class extends Plugin {
       } = pluginManager.load(EnsemblVEPWidget)
 
       return new WidgetType({
+        heading: 'Feature Details',
         name: 'EnsemblVEPWidget',
         HeadingComponent,
         configSchema,
