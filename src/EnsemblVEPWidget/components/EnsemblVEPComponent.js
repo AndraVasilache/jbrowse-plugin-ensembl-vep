@@ -92,20 +92,16 @@ export default jbrowse => {
             { signal },
           )
           const content = await response.json()
-          // console.log(content)
           console.log(setSpeciesName)
           console.log(speciesName)
-          // console.log(allAssemblyNames)
           
           console.log(content.species)
           content.species.forEach(speciemen => {
             if(allAssemblyNames.includes (speciemen.assembly)) {
               console.log(speciemen.common_name)
-              setSpecies(speciemen.common_name)
+              setSpeciesName(speciemen.common_name)
             }
           })
-          
-          setSpecies(content)
         } catch (error) {
           if (!signal.aborted) console.error(error)
         }
