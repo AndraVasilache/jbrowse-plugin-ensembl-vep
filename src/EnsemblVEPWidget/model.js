@@ -27,9 +27,12 @@ export default jbrowse => {
   .views(self => ({
     get allAssemblyNames() {
       const {assemblyManager, assemblyNames} = getSession(self)
-      //foreach
-      const assembly = assemblyManager.get(assemblyNames[0])
-      return [assembly.name, ...assembly.aliases]
+      const assemblies = []
+      for(var i = 0; i < assemblyNames.length; i++) {
+        assemblies.push(assemblyManager.get(assemblyNames[i]).name)
+        assemblyManager.get(assemblyNames[i]).aliases.forEach(alias => assemblies.push(alias))
+      }
+      return assemblies
     }
   }))
 }
