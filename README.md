@@ -2,8 +2,6 @@
 
 > Plugin for Jbrowse2 that fetches variant consequences
 
----
-
 ## Installation
 
 ### Pre-requisites
@@ -13,7 +11,7 @@
 - [yarn](https://yarnpkg.com/en/docs/install)
 
 ### Install (Linux)
-  Make sure you have JBrowse2 already running on your local machine
+  Make sure you have JBrowse2 already running on your local machine (as to now, you might need to be on branch 1037_track_context_menu in order for this plugin to work properly)
 - Clone this repo on your local machine using `https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep`
 - `cd jbrowse-plugin-ensembl-vep`
 - `yarn`
@@ -21,6 +19,7 @@
 ## Quick start
 
 - cd to jbrowse-plugin-ensembl-vep and run `yarn develop`
+- once your application is up, go in your browser on the following link: `localhost:3000/?config=http://localhost:9000/ensembl_config.json`
 
 ## Contact
 
