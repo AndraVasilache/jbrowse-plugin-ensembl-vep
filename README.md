@@ -24,7 +24,7 @@
 
 ## Contact
 
-Andra Vasilache - [AndraVasilache] (https://github.com/AndraVasilache) - [vasilacheandragabriela@gmail.com] ()
+Andra Vasilache - [AndraVasilache](https://github.com/AndraVasilache) - [vasilacheandragabriela@gmail.com]()
 
 Project Link - [https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep](https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep)
 
