@@ -63,8 +63,8 @@ export default jbrowse => {
           const content = await response.json()
           content.species.forEach(speciemen => {
             if(allAssemblyNames.includes (speciemen.assembly)) {
-              //todo exceptions here
-              console.log(speciemen.common_name)
+              var speciesNewName = speciemen.common_name
+              speciesNewName = speciesNewName.split(' ').join('_')
               setSpeciesName(speciemen.common_name)
             }
           })
