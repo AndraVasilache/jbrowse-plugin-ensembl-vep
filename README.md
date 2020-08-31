@@ -2,12 +2,6 @@
 
 > Plugin for Jbrowse2 that fetches variant consequences
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Support](#support)
-- [License](#license)
-
 ---
 
 ## Installation
@@ -24,14 +18,16 @@
 - `cd jbrowse-plugin-ensembl-vep`
 - `yarn`
 
-### Quick start
+## Quick start
 
 - cd to jbrowse-plugin-ensembl-vep and run `yarn develop`
 
 ## Contact
 
-Andra Vasilache - [AndraVasilache] (https://github.com/AndraVasilache) - [vasilacheandragabriela@gmail.com]
-Project Link - [https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep](`https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep`)
+Andra Vasilache - [AndraVasilache] (https://github.com/AndraVasilache) - [vasilacheandragabriela@gmail.com] ()
+
+Project Link - [https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep](https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep)
+
 ---
 
 ## License
