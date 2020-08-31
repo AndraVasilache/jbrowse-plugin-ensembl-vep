@@ -2,6 +2,7 @@ import type PluginManager from '@gmod/jbrowse-core/PluginManager'
 import Plugin from '@gmod/jbrowse-core/Plugin'
 import StorageIcon from '@material-ui/icons/Storage'
 import { getSession, isSessionModelWithWidgets } from '@gmod/jbrowse-core/util'
+import { getConf } from '@gmod/jbrowse-core/configuration'
 
 import EnsemblVEPWidget from './EnsemblVEPWidget'
 import { autorun } from 'mobx'
@@ -25,6 +26,7 @@ export default class extends Plugin {
       } = pluginManager.load(EnsemblVEPWidget)
 
       return new WidgetType({
+        heading: 'Feature Details',
         name: 'EnsemblVEPWidget',
         HeadingComponent,
         configSchema,
@@ -54,7 +56,6 @@ export default class extends Plugin {
                     return []
                   }
                   const menuItem = {
-                    /* menu item you already have, it has "label", "icon", "onClick" */
                     label: 'Ensembl VEP',
                     icon: StorageIcon,
                     onClick: () => {
@@ -62,7 +63,8 @@ export default class extends Plugin {
                         const featureWidget = session.addWidget(
                           'EnsemblVEPWidget',
                           'ensemblVEPWidget',
-                          { featureData: feature.toJSON() },
+                          { featureData: feature.toJSON(), 
+                            assemblyNames: getConf(track, 'assemblyNames') },
                         )
                         session.showWidget(featureWidget)
                       }
