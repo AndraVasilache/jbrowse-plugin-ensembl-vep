@@ -1,6 +1,7 @@
 # Ensembl VEP Plugin for Jbrowse 2
 
 > Plugin for Jbrowse2 that fetches variant consequences
+> Google Summer of Code Project Submission
 
 ## Installation
 
@@ -11,7 +12,7 @@
 - [yarn](https://yarnpkg.com/en/docs/install)
 
 ### Install (Linux)
-  Make sure you have JBrowse2 already running on your local machine (as to now, you might need to be on branch 1037_track_context_menu in order for this plugin to work properly)
+  Make sure you have JBrowse2 already running on your local machine
 - Clone this repo on your local machine using `https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep`
 - `cd jbrowse-plugin-ensembl-vep`
 - `yarn`
@@ -30,6 +31,8 @@ Project Link - [https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep](ht
 ---
 
 ## License
+
+This was originally created as a Google Summer of Code project.
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
