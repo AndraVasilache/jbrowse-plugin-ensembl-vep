@@ -1,6 +1,7 @@
 # Ensembl VEP Plugin for Jbrowse 2
 
 > Plugin for Jbrowse2 that fetches variant consequences
+
 > Google Summer of Code Project Submission
 
 ## Installation
