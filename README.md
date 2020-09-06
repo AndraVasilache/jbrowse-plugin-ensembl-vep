@@ -33,8 +33,8 @@ Project Link - [https://github.com/AndraVasilache/jbrowse-plugin-ensembl-vep](ht
 
 ## License
 
-This was originally created as a Google Summer of Code project.
-
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+This was originally created as a Google Summer of Code project.
 
 Distributed under the MIT License. See `LICENSE` for more information.
